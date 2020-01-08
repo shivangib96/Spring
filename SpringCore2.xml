@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+xmlns:context="http://www.springframework.org/schema/context"
+xsi:schemaLocation="http://www.springframework.org/schema/beans
+http://www.springframework.org/schema/beans/spring-beans.xsd
+http://www.springframework.org/schema/context
+http://www.springframework.org/schema/context/spring-context-3.0.xsd">
+<bean id="std" class="beans.Student"  >
+<constructor-arg name="name" value="deloitte"></constructor-arg>
+            <constructor-arg name="regno" value="1223"></constructor-arg>
+            <property name="name" value="spring"></property>
+            <property name="regno" value="1234"></property>
+            <property name="addr" ref="addr"></property>
+            </bean>
+ 
+    <bean id="addr" class="beans.Address">
+<property name="street" value="hitech"></property>
+<property name="city" value="hyd"></property>
+</bean>
+
+
+<bean id="emp" class="beans.Employee" scope="prototype" init-method="start"
+ destroy-method="stop">
+ <property name="empname" value="scott"></property>
+ <property name="salary" value="45000"></property>
+ <property name="skills">
+ <list>
+ <value>java</value>
+ <value>oracle</value>
+ <value>spring</value>
+ <value>hybernet</value>
+ </list>
+ </property>
+ </bean>
+ </beans
